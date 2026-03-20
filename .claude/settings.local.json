@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx tsc:*)",
+      "Bash(wsl -d Ubuntu bash -c \"cd /home/allimdv/greatasianfinds && npx next build 2>&1\")",
+      "Bash(wsl -d Ubuntu bash -c \"cd /home/allimdv/greatasianfinds && node_modules/.bin/next build 2>&1\")",
+      "Bash(wsl -d Ubuntu bash -c \"ls -la /home/allimdv/greatasianfinds/node_modules/.bin/next 2>&1\")",
+      "Bash(wsl -d Ubuntu bash -c \"chmod +x /home/allimdv/greatasianfinds/node_modules/.bin/next && cd /home/allimdv/greatasianfinds && node_modules/.bin/next build 2>&1\")",
+      "Bash(wsl -d Ubuntu bash -c \"cd /home/allimdv/greatasianfinds && mv next.config.ts next.config.mjs 2>&1 && head -3 next.config.mjs\")",
+      "Bash(wsl -d:*)",
+      "Bash(git config:*)",
+      "Bash(gh auth:*)",
+      "Bash(ls -la .env*)",
+      "Bash(git rm:*)",
+      "Bash(where gh:*)",
+      "Bash(rm -f .git/index.lock)",
+      "Bash(ls -la .git/*.lock)",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && rm -f .git/index.lock && git rm -r --cached node_modules .next ''README.md:Zone.Identifier'' ''claude.md:Zone.Identifier'' next-env.d.ts 2>&1 | tail -5\")",
+      "Bash(wsl -e bash -c \"find /home/allimdv/greatasianfinds/.git -name ''*.lock'' -type f -exec rm -f {} \\\\; && echo ''locks cleared'' && ls /home/allimdv/greatasianfinds/.git/*.lock 2>/dev/null || echo ''no locks remain''\")",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git status 2>&1 | head -10\")",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git rev-parse --show-toplevel 2>&1\")",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git rev-parse --show-toplevel\")",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && rm -rf .git 2>/dev/null; git init && git checkout -b main && echo ''Initialized fresh repo''\")",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git remote -v 2>&1\")",
+      "Bash(wsl -e bash -c \"which gh 2>/dev/null && gh auth status 2>&1 || echo ''gh not installed''\")"
+    ]
+  }
+}
