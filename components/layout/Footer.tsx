@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const EXPLORE_LINKS = [
   { href: '/shop', label: 'Shop All Pieces' },
@@ -18,14 +19,26 @@ const HELP_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="bg-charcoal text-cream/80">
+    <footer className="bg-charcoal text-cream/80 relative">
+      {/* Teak divider at top */}
+      <div className="teak-divider" />
+
       <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-16 lg:pt-20 pb-10">
         {/* Main grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           {/* Brand column */}
           <div className="lg:col-span-5">
-            <Link href="/" className="inline-block mb-5">
-              <span className="font-serif text-2xl text-cream tracking-wide">Great Asian Finds</span>
+            <Link href="/" className="inline-flex items-center gap-3 mb-5 group">
+              <Image
+                src="/brand/gaf-logo.svg"
+                alt="Great Asian Finds"
+                width={44}
+                height={44}
+                className="h-11 w-auto brightness-[1.8] opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+              />
+              <span className="font-serif text-xl text-cream tracking-wide group-hover:text-soft-gold transition-colors duration-300">
+                Great Asian Finds
+              </span>
             </Link>
             <p className="text-sm leading-relaxed text-cream/50 max-w-sm font-sans">
               A curated showroom of Asian furniture, decor, and statement home pieces. Every object
@@ -107,7 +120,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-[11px] text-cream/25 font-sans">
-          <p>© 2024 Great Asian Finds. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Great Asian Finds. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-cream/50 transition-colors">
               Privacy Policy

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { ShoppingBag, Menu, X, Search } from 'lucide-react'
 
@@ -40,13 +41,23 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="group flex flex-col items-start leading-none gap-0.5">
-            <span className="font-serif text-xl lg:text-[1.35rem] text-charcoal tracking-wide group-hover:text-warm-wood transition-colors duration-300">
-              Great Asian Finds
-            </span>
-            <span className="text-[9px] tracking-[0.28em] uppercase text-muted font-sans">
-              Heritage · Story · Home
-            </span>
+          <Link href="/" className="group flex items-center gap-3 leading-none">
+            <Image
+              src="/brand/gaf-logo.svg"
+              alt="Great Asian Finds"
+              width={48}
+              height={48}
+              className="h-9 lg:h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+              priority
+            />
+            <div className="flex flex-col gap-0.5">
+              <span className="font-serif text-[0.85rem] lg:text-[1rem] text-charcoal tracking-wide group-hover:text-warm-wood transition-colors duration-300 leading-tight">
+                Great Asian Finds
+              </span>
+              <span className="text-[8px] lg:text-[9px] tracking-[0.28em] uppercase text-muted font-sans">
+                Heritage · Story · Home
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
