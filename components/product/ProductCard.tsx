@@ -24,7 +24,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const isSold = product.availability_status === 'sold'
 
   return (
-    <Link href={`/shop/${product.slug}`} className="group block">
+    <Link href={`/shop/${product.slug}`} className="group block teak-card">
       {/* Image container */}
       <div className="relative overflow-hidden aspect-[3/4] bg-cream mb-4">
         {/* Primary image */}

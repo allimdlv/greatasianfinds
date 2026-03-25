@@ -50,7 +50,7 @@ export default function HomePage() {
       <HeroBanner />
 
       {/* Featured products */}
-      <section className="py-20 lg:py-28 bg-cream">
+      <section className="py-20 lg:py-28 bg-cream teak-bg">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex items-end justify-between mb-12">
             <div>
@@ -86,8 +86,11 @@ export default function HomePage() {
       <EditorialSplit />
       <CountryGrid />
 
+      {/* Teak divider */}
+      <div className="teak-divider" />
+
       {/* Journal */}
-      <section className="py-20 lg:py-28 bg-cream">
+      <section className="py-20 lg:py-28 bg-cream teak-bg">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex items-end justify-between mb-12">
             <div>

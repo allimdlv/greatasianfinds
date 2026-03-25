@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function HeroBanner() {
   return (
@@ -17,9 +18,28 @@ export function HeroBanner() {
       {/* Overlays */}
       <div className="absolute inset-0 bg-gradient-to-r from-charcoal/75 via-charcoal/40 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent" />
+      {/* Teak wood grain overlay */}
+      <div className="absolute inset-0 teak-grain-strong opacity-50" />
 
       {/* Content */}
-      <div className="relative h-full flex flex-col justify-end pb-16 lg:pb-24 px-6 lg:px-12 max-w-7xl mx-auto w-full">
+      <div className="relative h-full flex flex-col justify-end pb-16 lg:pb-24 px-6 lg:px-12 max-w-7xl mx-auto w-full z-10">
+        {/* Logo watermark */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 0.06 }}
+          transition={{ duration: 2, delay: 0.5 }}
+          className="absolute top-1/2 right-8 lg:right-16 -translate-y-1/2 pointer-events-none"
+        >
+          <Image
+            src="/brand/gaf-logo.svg"
+            alt=""
+            width={400}
+            height={400}
+            className="w-48 lg:w-80 h-auto brightness-[3] opacity-30"
+            aria-hidden="true"
+          />
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -84,7 +104,7 @@ export function HeroBanner() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute bottom-8 right-8 lg:right-12 flex flex-col items-center gap-3"
+        className="absolute bottom-8 right-8 lg:right-12 flex flex-col items-center gap-3 z-10"
       >
         <div className="w-px h-12 bg-cream/30 animate-[scroll-line_2s_ease-in-out_infinite]" />
         <span className="text-cream/30 text-[9px] tracking-[0.3em] uppercase font-sans">

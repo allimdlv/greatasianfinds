@@ -47,7 +47,7 @@ const COUNTRIES = [
 
 export function CountryGrid() {
   return (
-    <section className="py-20 lg:py-28 bg-parchment">
+    <section className="py-20 lg:py-28 bg-parchment teak-bg">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Header */}
         <div className="mb-12 lg:mb-14">

@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export function EditorialSplit() {
   return (
-    <section className="py-16 lg:py-28 bg-cream">
+    <section className="py-16 lg:py-28 bg-cream teak-bg">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 items-center">
           {/* Text side */}
