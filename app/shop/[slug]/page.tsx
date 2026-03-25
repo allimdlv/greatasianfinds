@@ -5,19 +5,20 @@ import { PRODUCTS, getProductBySlug } from '@/lib/data/products'
 import { ProductGallery } from '@/components/product/ProductGallery'
 import { StatusBadge } from '@/components/product/StatusBadge'
 import { ProductCard } from '@/components/product/ProductCard'
-import { MessageSquare, Calendar, ShoppingBag } from 'lucide-react'
+import { ProductActions } from '@/components/product/ProductActions'
+import { MessageSquare, Calendar, ShoppingBag, Eye } from 'lucide-react'
 
 const COUNTRY_FLAGS: Record<string, string> = {
-  Thailand: '🇹🇭',
-  China: '🇨🇳',
-  Korea: '🇰🇷',
-  Indonesia: '🇮🇩',
-  Vietnam: '🇻🇳',
-  Philippines: '🇵🇭',
+  Thailand: '\u{1F1F9}\u{1F1ED}',
+  China: '\u{1F1E8}\u{1F1F3}',
+  Korea: '\u{1F1F0}\u{1F1F7}',
+  Indonesia: '\u{1F1EE}\u{1F1E9}',
+  Vietnam: '\u{1F1FB}\u{1F1F3}',
+  Philippines: '\u{1F1F5}\u{1F1ED}',
 }
 
 function formatPrice(price: number): string {
-  return `₱${price.toLocaleString('en-PH')}`
+  return `\u20B1${price.toLocaleString('en-PH')}`
 }
 
 interface ProductPageProps {
@@ -97,7 +98,7 @@ export default function ProductPage({ params }: ProductPageProps) {
             <p className="text-sm text-charcoal/45 font-sans mb-5 flex items-center gap-1.5">
               <span>{COUNTRY_FLAGS[product.country]}</span>
               <span>{product.country}</span>
-              <span className="text-charcoal/25">·</span>
+              <span className="text-charcoal/25">&middot;</span>
               <span>{product.material}</span>
             </p>
 
@@ -107,7 +108,7 @@ export default function ProductPage({ params }: ProductPageProps) {
             </p>
 
             {/* CTAs — always visible */}
-            <div className="space-y-2.5 mb-8">
+            <div className="space-y-2.5 mb-4">
               {canAddToCart && (
                 <button className="w-full flex items-center justify-center gap-2 bg-charcoal text-cream text-[11px] tracking-[0.2em] uppercase py-4 hover:bg-warm-wood transition-colors duration-300 font-sans font-medium">
                   <ShoppingBag size={14} strokeWidth={1.5} />
@@ -132,14 +133,19 @@ export default function ProductPage({ params }: ProductPageProps) {
               </button>
             </div>
 
+            {/* Schedule a Viewing — client component */}
+            <ProductActions productName={product.name} />
+
             {/* Delivery note */}
-            <p className="text-[11px] text-charcoal/35 font-sans leading-relaxed mb-8">
-              Free white-glove delivery in Metro Manila for orders above ₱50,000.
+            <p className="text-[11px] text-charcoal/35 font-sans leading-relaxed mb-8 mt-4">
+              Free white-glove delivery in Metro Manila for orders above {'\u20B1'}50,000.
               Provincial and international shipping available on inquiry.
             </p>
 
             {/* Divider */}
-            <div className="border-t border-charcoal/10 pt-8 mb-8">
+            <div className="teak-divider mb-8" />
+
+            <div className="pt-4 mb-8">
               {/* The Story */}
               <h3 className="font-serif text-lg text-charcoal mb-3">The Story</h3>
               <p className="text-charcoal/65 leading-relaxed font-sans text-[0.9rem]">
@@ -149,61 +155,64 @@ export default function ProductPage({ params }: ProductPageProps) {
 
             {/* Details grid */}
             {hasDimensions && (
-              <div className="border-t border-charcoal/10 pt-8">
-                <h3 className="font-serif text-lg text-charcoal mb-5">Details</h3>
-                <dl className="grid grid-cols-2 gap-x-8 gap-y-4 text-sm font-sans">
-                  <div>
-                    <dt className="text-[10px] tracking-[0.2em] uppercase text-charcoal/35 mb-0.5">
-                      Material
-                    </dt>
-                    <dd className="text-charcoal/75">{product.material}</dd>
-                  </div>
-                  <div>
-                    <dt className="text-[10px] tracking-[0.2em] uppercase text-charcoal/35 mb-0.5">
-                      Origin
-                    </dt>
-                    <dd className="text-charcoal/75">{product.country}</dd>
-                  </div>
-                  {product.dimensions.width && (
+              <>
+                <div className="teak-divider mb-8" />
+                <div className="pt-4">
+                  <h3 className="font-serif text-lg text-charcoal mb-5">Details</h3>
+                  <dl className="grid grid-cols-2 gap-x-8 gap-y-4 text-sm font-sans">
                     <div>
                       <dt className="text-[10px] tracking-[0.2em] uppercase text-charcoal/35 mb-0.5">
-                        Width
+                        Material
                       </dt>
-                      <dd className="text-charcoal/75">{product.dimensions.width}</dd>
+                      <dd className="text-charcoal/75">{product.material}</dd>
                     </div>
-                  )}
-                  {product.dimensions.height && (
                     <div>
                       <dt className="text-[10px] tracking-[0.2em] uppercase text-charcoal/35 mb-0.5">
-                        Height
+                        Origin
                       </dt>
-                      <dd className="text-charcoal/75">{product.dimensions.height}</dd>
+                      <dd className="text-charcoal/75">{product.country}</dd>
                     </div>
-                  )}
-                  {product.dimensions.depth && (
-                    <div>
+                    {product.dimensions.width && (
+                      <div>
+                        <dt className="text-[10px] tracking-[0.2em] uppercase text-charcoal/35 mb-0.5">
+                          Width
+                        </dt>
+                        <dd className="text-charcoal/75">{product.dimensions.width}</dd>
+                      </div>
+                    )}
+                    {product.dimensions.height && (
+                      <div>
+                        <dt className="text-[10px] tracking-[0.2em] uppercase text-charcoal/35 mb-0.5">
+                          Height
+                        </dt>
+                        <dd className="text-charcoal/75">{product.dimensions.height}</dd>
+                      </div>
+                    )}
+                    {product.dimensions.depth && (
+                      <div>
+                        <dt className="text-[10px] tracking-[0.2em] uppercase text-charcoal/35 mb-0.5">
+                          Depth
+                        </dt>
+                        <dd className="text-charcoal/75">{product.dimensions.depth}</dd>
+                      </div>
+                    )}
+                    {product.dimensions.diameter && (
+                      <div>
+                        <dt className="text-[10px] tracking-[0.2em] uppercase text-charcoal/35 mb-0.5">
+                          Diameter
+                        </dt>
+                        <dd className="text-charcoal/75">{product.dimensions.diameter}</dd>
+                      </div>
+                    )}
+                    <div className="col-span-2">
                       <dt className="text-[10px] tracking-[0.2em] uppercase text-charcoal/35 mb-0.5">
-                        Depth
+                        Rooms
                       </dt>
-                      <dd className="text-charcoal/75">{product.dimensions.depth}</dd>
+                      <dd className="text-charcoal/75">{product.room.join(', ')}</dd>
                     </div>
-                  )}
-                  {product.dimensions.diameter && (
-                    <div>
-                      <dt className="text-[10px] tracking-[0.2em] uppercase text-charcoal/35 mb-0.5">
-                        Diameter
-                      </dt>
-                      <dd className="text-charcoal/75">{product.dimensions.diameter}</dd>
-                    </div>
-                  )}
-                  <div className="col-span-2">
-                    <dt className="text-[10px] tracking-[0.2em] uppercase text-charcoal/35 mb-0.5">
-                      Rooms
-                    </dt>
-                    <dd className="text-charcoal/75">{product.room.join(', ')}</dd>
-                  </div>
-                </dl>
-              </div>
+                  </dl>
+                </div>
+              </>
             )}
           </div>
         </div>
@@ -211,7 +220,7 @@ export default function ProductPage({ params }: ProductPageProps) {
 
       {/* Related products */}
       {related.length > 0 && (
-        <section className="bg-cream py-16 lg:py-20">
+        <section className="bg-cream teak-bg py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <h2 className="font-serif text-2xl lg:text-3xl text-charcoal mb-10">
               More from {product.country}
