@@ -13,6 +13,12 @@
   --color-cream: #FDFAF5;
   --color-amber: #D4863C;
   --color-muted: #9B9186;
+
+  /* Teak wood palette */
+  --color-teak-dark: #6B4226;
+  --color-teak: #A0714F;
+  --color-teak-light: #C4956A;
+  --color-teak-grain: #8B6914;
 }
 
 @layer base {
@@ -33,6 +39,166 @@
   ::selection {
     background-color: #C9A84C30;
     color: #2C2C2C;
+  }
+}
+
+@layer components {
+  /* ──────────────────────────────────────────────
+     TEAK WOOD TEXTURES — CSS-only wood grain
+     ────────────────────────────────────────────── */
+
+  /* Subtle background wood grain — use on sections */
+  .teak-bg {
+    position: relative;
+    background-color: var(--color-parchment);
+  }
+
+  .teak-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        87deg,
+        transparent,
+        transparent 18px,
+        rgba(139, 105, 20, 0.018) 18px,
+        rgba(139, 105, 20, 0.018) 19px
+      ),
+      repeating-linear-gradient(
+        92deg,
+        transparent,
+        transparent 32px,
+        rgba(107, 66, 38, 0.015) 32px,
+        rgba(107, 66, 38, 0.015) 33px
+      ),
+      repeating-linear-gradient(
+        85deg,
+        transparent,
+        transparent 55px,
+        rgba(160, 113, 79, 0.012) 55px,
+        rgba(160, 113, 79, 0.012) 57px
+      );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .teak-bg > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Pronounced teak grain — for hero/accent sections */
+  .teak-grain-strong {
+    position: relative;
+  }
+
+  .teak-grain-strong::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        88deg,
+        transparent,
+        transparent 12px,
+        rgba(139, 105, 20, 0.04) 12px,
+        rgba(139, 105, 20, 0.04) 13px
+      ),
+      repeating-linear-gradient(
+        91deg,
+        transparent,
+        transparent 25px,
+        rgba(107, 66, 38, 0.03) 25px,
+        rgba(107, 66, 38, 0.03) 26px
+      ),
+      repeating-linear-gradient(
+        86deg,
+        transparent,
+        transparent 45px,
+        rgba(196, 149, 106, 0.025) 45px,
+        rgba(196, 149, 106, 0.025) 47px
+      ),
+      repeating-linear-gradient(
+        93deg,
+        transparent,
+        transparent 70px,
+        rgba(160, 113, 79, 0.02) 70px,
+        rgba(160, 113, 79, 0.02) 73px
+      );
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+
+  /* Teak section divider — a horizontal line with wood character */
+  .teak-divider {
+    position: relative;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--color-teak-light) 15%,
+      var(--color-teak) 35%,
+      var(--color-teak-dark) 50%,
+      var(--color-teak) 65%,
+      var(--color-teak-light) 85%,
+      transparent 100%
+    );
+    opacity: 0.35;
+  }
+
+  .teak-divider::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 8px,
+        rgba(255, 255, 255, 0.3) 8px,
+        rgba(255, 255, 255, 0.3) 9px
+      );
+  }
+
+  /* Teak card hover — warm wood glow on hover */
+  .teak-card {
+    transition: box-shadow 0.5s cubic-bezier(0.25, 0.4, 0.25, 1),
+                border-color 0.5s cubic-bezier(0.25, 0.4, 0.25, 1);
+  }
+
+  .teak-card:hover {
+    box-shadow:
+      0 4px 20px rgba(107, 66, 38, 0.08),
+      0 1px 4px rgba(160, 113, 79, 0.06),
+      inset 0 1px 0 rgba(196, 149, 106, 0.15);
+  }
+
+  /* Gold shimmer for logo and accents */
+  .gold-shimmer {
+    background: linear-gradient(
+      135deg,
+      #B8923D 0%,
+      #C9A84C 25%,
+      #E8C96A 50%,
+      #C9A84C 75%,
+      #B8923D 100%
+    );
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Teak-warm section background */
+  .bg-teak-warm {
+    background: linear-gradient(
+      180deg,
+      var(--color-parchment) 0%,
+      #EDE5D8 50%,
+      var(--color-parchment) 100%
+    );
   }
 }
 
@@ -88,4 +254,10 @@
 .prose-editorial em {
   font-style: italic;
   font-weight: 300;
+}
+
+/* Schedule viewing modal backdrop */
+.schedule-backdrop {
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
 }

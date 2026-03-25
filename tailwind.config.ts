@@ -18,6 +18,11 @@ const config: Config = {
         cream: '#FDFAF5',
         amber: '#D4863C',
         muted: '#9B9186',
+        teak: {
+          DEFAULT: '#A0714F',
+          dark: '#6B4226',
+          light: '#C4956A',
+        },
       },
       fontFamily: {
         serif: ['Cormorant Garamond', 'Georgia', 'serif'],
