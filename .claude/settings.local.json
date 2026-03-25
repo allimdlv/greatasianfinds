@@ -23,7 +23,21 @@
       "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git rev-parse --show-toplevel\")",
       "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && rm -rf .git 2>/dev/null; git init && git checkout -b main && echo ''Initialized fresh repo''\")",
       "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git remote -v 2>&1\")",
-      "Bash(wsl -e bash -c \"which gh 2>/dev/null && gh auth status 2>&1 || echo ''gh not installed''\")"
+      "Bash(wsl -e bash -c \"which gh 2>/dev/null && gh auth status 2>&1 || echo ''gh not installed''\")",
+      "Read(//mnt/c/**)",
+      "Read(///wsl.localhost/Ubuntu//**)",
+      "Bash(wsl -e bash -c \"mkdir -p /home/allimdv/greatasianfinds/public/brand && echo ''created''\")",
+      "Bash(wsl -e bash -c \"mkdir -p /home/allimdv/greatasianfinds/components/forms && echo ''created''\")",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && npx tsc --noEmit 2>&1 | head -40\")",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && ./node_modules/.bin/tsc --noEmit 2>&1 | head -40\")",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && node ./node_modules/typescript/bin/tsc --noEmit 2>&1 | head -40\")",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && node ./node_modules/next/dist/bin/next build 2>&1 | tail -20\")",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git status 2>&1 | head -30\")",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git add .gitignore public/brand/gaf-logo.svg app/globals.css tailwind.config.ts && git commit -m ''feat: add GAF logo, teak wood design system, and brand colors:*)",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git add components/layout/Header.tsx components/layout/Footer.tsx && git commit -m ''feat: integrate GAF logo in Header and Footer:*)",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git add components/home/HeroBanner.tsx components/home/EditorialSplit.tsx components/home/CountryGrid.tsx components/product/ProductCard.tsx app/\\\\\\(marketing\\\\\\)/page.tsx && git commit -m ''feat: apply teak wood textures to homepage and product cards:*)",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git add components/forms/ScheduleViewing.tsx components/product/ProductActions.tsx app/shop/\\\\[slug\\\\]/page.tsx && git commit -m ''feat: add Schedule a Viewing feature for in-person showroom visits:*)",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git status 2>&1\")"
     ]
   }
 }
