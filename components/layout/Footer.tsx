@@ -47,7 +47,9 @@ export function Footer() {
             </p>
             <div className="mt-8 space-y-1">
               <p className="text-xs tracking-[0.2em] uppercase text-cream/30 font-sans">
-                Makati City, Philippines
+                La Brea, Dona Carmen
+                Commonwealth, Quezon City
+                Metro Manila, Philippines
               </p>
               <p className="text-xs text-cream/30 font-sans">hello@greatasianfinds.com</p>
             </div>
