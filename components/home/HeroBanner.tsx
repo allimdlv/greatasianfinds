@@ -31,7 +31,7 @@ export function HeroBanner() {
           className="absolute top-1/2 right-8 lg:right-16 -translate-y-1/2 pointer-events-none"
         >
           <Image
-            src="/brand/gaf-logo.svg"
+            src="/brand/gaf-logo.png"
             alt=""
             width={400}
             height={400}

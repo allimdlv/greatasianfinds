@@ -30,7 +30,7 @@ export function Footer() {
           <div className="lg:col-span-5">
             <Link href="/" className="inline-flex items-center gap-3 mb-5 group">
               <Image
-                src="/brand/gaf-logo.svg"
+                src="/brand/gaf-logo.png"
                 alt="Great Asian Finds"
                 width={44}
                 height={44}

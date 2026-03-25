@@ -43,7 +43,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-3 leading-none">
             <Image
-              src="/brand/gaf-logo.svg"
+              src="/brand/gaf-logo.png"
               alt="Great Asian Finds"
               width={48}
               height={48}
