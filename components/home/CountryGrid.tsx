@@ -39,7 +39,7 @@ const COUNTRIES = [
   {
     name: 'Philippines',
     slug: 'philippines',
-    description: 'Capiz, abacá, burnished gold',
+    description: 'Capiz, abac\u00e1, burnished gold',
     image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=700&q=80',
     pieces: 8,
   },
@@ -51,10 +51,10 @@ export function CountryGrid() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Header */}
         <div className="mb-12 lg:mb-14">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-warm-wood font-sans mb-2">
+          <p className="text-[10px] tracking-[0.3em] uppercase text-forest font-sans mb-2">
             Origins & Traditions
           </p>
-          <h2 className="font-serif text-3xl lg:text-5xl text-charcoal">Browse by Country</h2>
+          <h2 className="font-display text-3xl lg:text-5xl text-charcoal">Browse by Origin</h2>
         </div>
 
         {/* Grid */}
@@ -73,21 +73,21 @@ export function CountryGrid() {
                 }`}
                 style={{ backgroundImage: `url(${country.image})` }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent" />
-              <div className="absolute inset-0 bg-charcoal/10 group-hover:bg-charcoal/0 transition-colors duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/80 via-charcoal/15 to-transparent" />
+              <div className="absolute inset-0 bg-charcoal/5 group-hover:bg-transparent transition-colors duration-500" />
 
               <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-5">
                 <h3
-                  className={`font-serif text-cream leading-tight ${
+                  className={`font-display text-parchment leading-tight ${
                     i === 0 ? 'text-2xl lg:text-3xl' : 'text-lg lg:text-xl'
                   }`}
                 >
                   {country.name}
                 </h3>
-                <p className="text-cream/60 text-xs font-sans mt-0.5 leading-snug">
+                <p className="text-parchment/55 text-xs font-sans mt-0.5 leading-snug">
                   {country.description}
                 </p>
-                <p className="text-cream/35 text-[10px] tracking-[0.2em] uppercase font-sans mt-2">
+                <p className="text-parchment/30 text-[10px] tracking-[0.18em] uppercase font-sans mt-2">
                   {country.pieces} pieces
                 </p>
               </div>

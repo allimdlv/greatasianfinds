@@ -60,14 +60,14 @@ export function ShopFilters({ activeFilters }: ShopFiltersProps) {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="flex items-center justify-between pb-3 border-b border-charcoal/10">
-        <h3 className="text-[10px] tracking-[0.25em] uppercase font-sans text-charcoal">
+      <div className="flex items-center justify-between pb-3 border-b border-forest/10">
+        <h3 className="text-[10px] tracking-[0.22em] uppercase font-sans text-charcoal">
           Filter
         </h3>
         {hasFilters && (
           <button
             onClick={clearAll}
-            className="text-[11px] text-warm-wood underline font-sans hover:text-charcoal transition-colors"
+            className="text-[11px] text-forest underline font-sans hover:text-charcoal transition-colors"
           >
             Clear all
           </button>
@@ -87,7 +87,7 @@ export function ShopFilters({ activeFilters }: ShopFiltersProps) {
       </FilterGroup>
 
       {/* Country */}
-      <FilterGroup label="Country">
+      <FilterGroup label="Origin">
         {COUNTRIES.map((country) => (
           <FilterButton
             key={country}
@@ -134,7 +134,7 @@ function FilterGroup({
 }) {
   return (
     <div>
-      <h4 className="text-[10px] tracking-[0.25em] uppercase font-sans text-charcoal/40 mb-3">
+      <h4 className="text-[10px] tracking-[0.22em] uppercase font-sans text-warm-gray mb-3">
         {label}
       </h4>
       <div className="space-y-2">{children}</div>
@@ -155,19 +155,19 @@ function FilterButton({
     <button
       onClick={onClick}
       className={`flex items-center gap-2 text-sm font-sans text-left w-full transition-colors duration-150 ${
-        active ? 'text-warm-wood' : 'text-charcoal/55 hover:text-warm-wood'
+        active ? 'text-forest' : 'text-charcoal/50 hover:text-forest'
       }`}
     >
       <span
         className={`w-3.5 h-3.5 border flex-shrink-0 flex items-center justify-center transition-colors ${
-          active ? 'border-warm-wood bg-warm-wood' : 'border-charcoal/25'
+          active ? 'border-forest bg-forest' : 'border-charcoal/20'
         }`}
       >
         {active && (
           <svg width="8" height="6" viewBox="0 0 8 6" fill="none">
             <path
               d="M1 3L3 5L7 1"
-              stroke="#FDFAF5"
+              stroke="#FAF7F2"
               strokeWidth="1.2"
               strokeLinecap="round"
               strokeLinejoin="round"

@@ -2,17 +2,16 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { ShoppingBag, Menu, X, Search } from 'lucide-react'
+import { ShoppingBag, Menu, X, Search, Calendar } from 'lucide-react'
 
 const NAV_LINKS = [
   { href: '/shop', label: 'Shop' },
   { href: '/collections', label: 'Collections' },
-  { href: '/countries', label: 'Countries' },
+  { href: '/countries', label: 'Origins' },
   { href: '/rooms', label: 'Rooms' },
   { href: '/journal', label: 'Journal' },
-  { href: '/about', label: 'About' },
+  { href: '/about', label: 'Our Story' },
 ]
 
 export function Header() {
@@ -34,30 +33,20 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-cream/96 backdrop-blur-md shadow-[0_1px_0_0_rgba(44,44,44,0.08)]'
-          : 'bg-cream'
+          ? 'bg-parchment/97 backdrop-blur-md shadow-[0_1px_0_0_rgba(61,80,56,0.08)]'
+          : 'bg-parchment'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="max-w-7xl mx-auto px-5 lg:px-10">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-3 leading-none">
-            <Image
-              src="/brand/gaf-logo.png"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/brand/gaf-logo.svg"
               alt="Great Asian Finds"
-              width={48}
-              height={48}
-              className="h-9 lg:h-12 w-auto transition-transform duration-300 group-hover:scale-105"
-              priority
+              className="h-10 lg:h-14 w-auto transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="flex flex-col gap-0.5">
-              <span className="font-serif text-[0.85rem] lg:text-[1rem] text-charcoal tracking-wide group-hover:text-warm-wood transition-colors duration-300 leading-tight">
-                Great Asian Finds
-              </span>
-              <span className="text-[8px] lg:text-[9px] tracking-[0.28em] uppercase text-muted font-sans">
-                Heritage · Story · Home
-              </span>
-            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -66,10 +55,10 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[11px] tracking-[0.2em] uppercase font-sans transition-colors duration-200 ${
+                className={`text-[11px] tracking-[0.18em] uppercase font-sans transition-colors duration-200 ${
                   pathname.startsWith(link.href)
-                    ? 'text-warm-wood'
-                    : 'text-charcoal/60 hover:text-warm-wood'
+                    ? 'text-forest'
+                    : 'text-charcoal/50 hover:text-forest'
                 }`}
               >
                 {link.label}
@@ -78,25 +67,32 @@ export function Header() {
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
+            <Link
+              href="/schedule"
+              className="hidden lg:flex items-center gap-1.5 text-[10px] tracking-[0.15em] uppercase text-forest border border-forest/25 px-3.5 py-2 hover:bg-forest hover:text-parchment transition-all duration-300 font-sans"
+            >
+              <Calendar size={13} strokeWidth={1.5} />
+              Visit Showroom
+            </Link>
             <button
-              className="hidden lg:flex text-charcoal/60 hover:text-warm-wood transition-colors"
+              className="hidden lg:flex text-charcoal/40 hover:text-forest transition-colors"
               aria-label="Search"
             >
               <Search size={17} strokeWidth={1.5} />
             </button>
             <Link
               href="/cart"
-              className="relative text-charcoal/60 hover:text-warm-wood transition-colors"
+              className="relative text-charcoal/40 hover:text-forest transition-colors"
               aria-label="Cart (0 items)"
             >
               <ShoppingBag size={17} strokeWidth={1.5} />
-              <span className="absolute -top-1.5 -right-1.5 bg-jade text-cream text-[9px] w-[14px] h-[14px] rounded-full flex items-center justify-center font-sans font-medium">
+              <span className="absolute -top-1.5 -right-1.5 bg-forest text-parchment text-[9px] w-[14px] h-[14px] rounded-full flex items-center justify-center font-sans font-medium">
                 0
               </span>
             </Link>
             <button
-              className="lg:hidden text-charcoal/60 hover:text-warm-wood transition-colors ml-1"
+              className="lg:hidden text-charcoal/50 hover:text-forest transition-colors ml-1"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
@@ -110,25 +106,34 @@ export function Header() {
       {/* Mobile Nav */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          mobileOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          mobileOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="border-t border-charcoal/8 bg-cream">
+        <div className="border-t border-forest/8 bg-parchment">
           <nav className="flex flex-col px-6 py-6 gap-5">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[11px] tracking-[0.2em] uppercase text-charcoal font-sans hover:text-warm-wood transition-colors"
+                className={`text-[11px] tracking-[0.18em] uppercase font-sans transition-colors ${
+                  pathname.startsWith(link.href) ? 'text-forest' : 'text-charcoal/60 hover:text-forest'
+                }`}
               >
                 {link.label}
               </Link>
             ))}
           </nav>
-          <div className="border-t border-charcoal/8 px-6 py-4">
-            <button className="flex items-center gap-2 text-charcoal/60 text-sm font-sans">
+          <div className="border-t border-forest/8 px-6 py-4 flex flex-col gap-4">
+            <Link
+              href="/schedule"
+              className="flex items-center gap-2 text-forest text-sm font-sans"
+            >
+              <Calendar size={15} strokeWidth={1.5} />
+              <span className="text-[11px] tracking-[0.15em] uppercase">Schedule a Visit</span>
+            </Link>
+            <button className="flex items-center gap-2 text-charcoal/50 text-sm font-sans">
               <Search size={15} strokeWidth={1.5} />
-              <span>Search pieces</span>
+              <span className="text-[11px] tracking-[0.15em] uppercase">Search pieces</span>
             </button>
           </div>
         </div>

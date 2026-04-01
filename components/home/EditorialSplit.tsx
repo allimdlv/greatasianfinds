@@ -7,15 +7,15 @@ export function EditorialSplit() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 items-center">
           {/* Text side */}
           <div className="order-2 lg:order-1">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-warm-wood font-sans mb-5">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-forest font-sans mb-5">
               Our Philosophy
             </p>
-            <h2 className="font-serif text-3xl lg:text-[2.8rem] text-charcoal leading-[1.15] mb-7">
+            <h2 className="font-display text-3xl lg:text-[2.8rem] text-charcoal leading-[1.15] mb-7">
               Every object has
               <br />
-              <em className="font-light">earned its place.</em>
+              <em className="font-serif font-light italic">earned its place.</em>
             </h2>
-            <div className="space-y-5 text-charcoal/65 leading-relaxed font-sans text-[0.9375rem]">
+            <div className="space-y-5 text-warm-gray leading-relaxed font-sans text-[0.9375rem]">
               <p>
                 Great Asian Finds was born from a simple belief: that furniture is not furniture,
                 it is the accumulated craft of generations. The teak chair that grounds your reading
@@ -31,17 +31,17 @@ export function EditorialSplit() {
             <div className="mt-9 flex flex-col sm:flex-row items-start sm:items-center gap-5">
               <Link
                 href="/about"
-                className="group flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase text-charcoal font-sans"
+                className="group flex items-center gap-3 text-[11px] tracking-[0.18em] uppercase text-charcoal font-sans"
               >
                 <span className="w-6 h-px bg-charcoal group-hover:w-10 transition-all duration-300" />
                 Our Story
               </Link>
               <Link
-                href="/consultation"
-                className="group flex items-center gap-3 text-[11px] tracking-[0.2em] uppercase text-jade font-sans"
+                href="/schedule"
+                className="group flex items-center gap-3 text-[11px] tracking-[0.18em] uppercase text-forest font-sans"
               >
-                <span className="w-6 h-px bg-jade group-hover:w-10 transition-all duration-300" />
-                Book a Consultation
+                <span className="w-6 h-px bg-forest group-hover:w-10 transition-all duration-300" />
+                Visit the Showroom
               </Link>
             </div>
           </div>
@@ -58,15 +58,15 @@ export function EditorialSplit() {
                 }}
               />
               {/* Stat card */}
-              <div className="absolute -bottom-5 -left-5 lg:-bottom-7 lg:-left-7 bg-parchment px-6 py-5 shadow-sm">
-                <p className="font-serif text-[2rem] text-charcoal leading-none">12+</p>
-                <p className="text-[10px] tracking-[0.2em] uppercase text-charcoal/50 font-sans mt-1">
-                  Countries sourced
+              <div className="absolute -bottom-5 -left-5 lg:-bottom-7 lg:-left-7 bg-parchment px-6 py-5 shadow-sm border border-forest/5">
+                <p className="font-display text-[2rem] text-forest leading-none">6</p>
+                <p className="text-[10px] tracking-[0.18em] uppercase text-warm-gray font-sans mt-1">
+                  Countries of origin
                 </p>
               </div>
               {/* Accent image */}
               <div
-                className="hidden lg:block absolute -top-6 -right-6 w-32 h-40 bg-cover bg-center border-4 border-cream"
+                className="hidden lg:block absolute -top-6 -right-6 w-32 h-40 bg-cover bg-center border-4 border-parchment"
                 style={{
                   backgroundImage:
                     'url(https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=300&q=80)',

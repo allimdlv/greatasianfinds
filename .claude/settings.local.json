@@ -39,7 +39,8 @@
       "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git add components/forms/ScheduleViewing.tsx components/product/ProductActions.tsx app/shop/\\\\[slug\\\\]/page.tsx && git commit -m ''feat: add Schedule a Viewing feature for in-person showroom visits:*)",
       "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git status 2>&1\")",
       "Bash(wsl -e bash -c \"ls -la /home/allimdv/greatasianfinds/public/brand/ 2>&1\")",
-      "Bash(wsl -e bash -c \"mv /home/allimdv/greatasianfinds/public/brand/gaf-logo.png.png /home/allimdv/greatasianfinds/public/brand/gaf-logo.png && ls -la /home/allimdv/greatasianfinds/public/brand/\")"
+      "Bash(wsl -e bash -c \"mv /home/allimdv/greatasianfinds/public/brand/gaf-logo.png.png /home/allimdv/greatasianfinds/public/brand/gaf-logo.png && ls -la /home/allimdv/greatasianfinds/public/brand/\")",
+      "Bash(find /mnt/c/Users/*/AppData/Local -name \"greatasianfinds\" -type d)"
     ]
   }
 }

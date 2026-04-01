@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none">
+  <!-- Mountain + Wave inside semi-circle -->
+  <g stroke="#3D5038" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Semi-circle arch -->
+    <path d="M100 185 C100 120, 135 65, 200 55 C265 65, 300 120, 300 185"/>
+    <!-- Mountain peaks -->
+    <path d="M140 185 L185 105 L210 145 L235 95 L265 185"/>
+    <!-- Flowing wave -->
+    <path d="M115 175 C140 155, 155 175, 175 165 C195 155, 210 175, 235 165 C255 158, 270 170, 290 165"/>
+  </g>
+  <!-- Text: GREAT ASIAN FINDS -->
+  <text x="200" y="245" text-anchor="middle" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="400" letter-spacing="8" fill="#3D5038">GREAT ASIAN FINDS</text>
+</svg>

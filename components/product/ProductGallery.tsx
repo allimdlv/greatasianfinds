@@ -17,7 +17,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
   return (
     <div className="flex flex-col gap-4 lg:gap-5">
       {/* Main image */}
-      <div className="relative overflow-hidden aspect-[4/5] bg-cream group">
+      <div className="relative overflow-hidden aspect-[4/5] bg-clay group">
         {images.map((image, i) => (
           <div
             key={i}
@@ -30,19 +30,18 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
           />
         ))}
 
-        {/* Nav arrows — only if multiple images */}
         {images.length > 1 && (
           <>
             <button
               onClick={prev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-cream/80 hover:bg-cream flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-parchment/80 hover:bg-parchment flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200"
               aria-label="Previous image"
             >
               <ChevronLeft size={16} strokeWidth={1.5} className="text-charcoal" />
             </button>
             <button
               onClick={next}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-cream/80 hover:bg-cream flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-parchment/80 hover:bg-parchment flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200"
               aria-label="Next image"
             >
               <ChevronRight size={16} strokeWidth={1.5} className="text-charcoal" />
@@ -50,7 +49,6 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
           </>
         )}
 
-        {/* Dot indicators */}
         {images.length > 1 && (
           <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-1.5">
             {images.map((_, i) => (
@@ -58,7 +56,7 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
                 key={i}
                 onClick={() => setActiveIndex(i)}
                 className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${
-                  i === activeIndex ? 'bg-charcoal w-4' : 'bg-charcoal/30'
+                  i === activeIndex ? 'bg-forest w-4' : 'bg-charcoal/25'
                 }`}
                 aria-label={`View image ${i + 1}`}
               />
@@ -76,8 +74,8 @@ export function ProductGallery({ images, name }: ProductGalleryProps) {
               onClick={() => setActiveIndex(i)}
               className={`relative overflow-hidden w-[68px] aspect-square flex-shrink-0 transition-all duration-200 ${
                 i === activeIndex
-                  ? 'ring-1 ring-charcoal opacity-100'
-                  : 'opacity-45 hover:opacity-70 ring-1 ring-transparent'
+                  ? 'ring-1 ring-forest opacity-100'
+                  : 'opacity-40 hover:opacity-65 ring-1 ring-transparent'
               }`}
               aria-label={`View ${name} image ${i + 1}`}
             >

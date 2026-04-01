@@ -1,24 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Serif+Display:ital@0;1&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --color-parchment: #F5F0E8;
-  --color-warm-wood: #8B6F47;
-  --color-jade: #4A7C59;
-  --color-soft-gold: #C9A84C;
-  --color-charcoal: #2C2C2C;
-  --color-cream: #FDFAF5;
-  --color-amber: #D4863C;
-  --color-muted: #9B9186;
-
-  /* Teak wood palette */
+  --color-parchment: #FAF7F2;
+  --color-cream: #F5F0E8;
+  --color-clay: #E8DFD5;
+  --color-charcoal: #2C2825;
+  --color-warm-gray: #7A736D;
+  --color-forest: #3D5038;
+  --color-forest-light: #4A6345;
+  --color-forest-dark: #2D3B28;
   --color-teak-dark: #6B4226;
   --color-teak: #A0714F;
   --color-teak-light: #C4956A;
-  --color-teak-grain: #8B6914;
+  --color-aged-gold: #B8975A;
+  --color-celadon: #7FA08A;
+  --color-warm-wood: #8B6F47;
 }
 
 @layer base {
@@ -32,13 +32,12 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cormorant Garamond', Georgia, serif;
     font-feature-settings: 'kern' 1, 'liga' 1;
   }
 
   ::selection {
-    background-color: #C9A84C30;
-    color: #2C2C2C;
+    background-color: rgba(61, 80, 56, 0.15);
+    color: #2C2825;
   }
 }
 
@@ -47,10 +46,8 @@
      TEAK WOOD TEXTURES — CSS-only wood grain
      ────────────────────────────────────────────── */
 
-  /* Subtle background wood grain — use on sections */
   .teak-bg {
     position: relative;
-    background-color: var(--color-parchment);
   }
 
   .teak-bg::before {
@@ -62,22 +59,22 @@
         87deg,
         transparent,
         transparent 18px,
-        rgba(139, 105, 20, 0.018) 18px,
-        rgba(139, 105, 20, 0.018) 19px
+        rgba(139, 105, 20, 0.015) 18px,
+        rgba(139, 105, 20, 0.015) 19px
       ),
       repeating-linear-gradient(
         92deg,
         transparent,
         transparent 32px,
-        rgba(107, 66, 38, 0.015) 32px,
-        rgba(107, 66, 38, 0.015) 33px
+        rgba(107, 66, 38, 0.012) 32px,
+        rgba(107, 66, 38, 0.012) 33px
       ),
       repeating-linear-gradient(
         85deg,
         transparent,
         transparent 55px,
-        rgba(160, 113, 79, 0.012) 55px,
-        rgba(160, 113, 79, 0.012) 57px
+        rgba(160, 113, 79, 0.01) 55px,
+        rgba(160, 113, 79, 0.01) 57px
       );
     pointer-events: none;
     z-index: 0;
@@ -102,67 +99,46 @@
         88deg,
         transparent,
         transparent 12px,
-        rgba(139, 105, 20, 0.04) 12px,
-        rgba(139, 105, 20, 0.04) 13px
+        rgba(139, 105, 20, 0.035) 12px,
+        rgba(139, 105, 20, 0.035) 13px
       ),
       repeating-linear-gradient(
         91deg,
         transparent,
         transparent 25px,
-        rgba(107, 66, 38, 0.03) 25px,
-        rgba(107, 66, 38, 0.03) 26px
+        rgba(107, 66, 38, 0.025) 25px,
+        rgba(107, 66, 38, 0.025) 26px
       ),
       repeating-linear-gradient(
         86deg,
         transparent,
         transparent 45px,
-        rgba(196, 149, 106, 0.025) 45px,
-        rgba(196, 149, 106, 0.025) 47px
-      ),
-      repeating-linear-gradient(
-        93deg,
-        transparent,
-        transparent 70px,
-        rgba(160, 113, 79, 0.02) 70px,
-        rgba(160, 113, 79, 0.02) 73px
+        rgba(196, 149, 106, 0.02) 45px,
+        rgba(196, 149, 106, 0.02) 47px
       );
     pointer-events: none;
     z-index: 1;
     mix-blend-mode: multiply;
   }
 
-  /* Teak section divider — a horizontal line with wood character */
+  /* Teak section divider */
   .teak-divider {
     position: relative;
-    height: 2px;
+    height: 1px;
     background: linear-gradient(
       90deg,
       transparent 0%,
-      var(--color-teak-light) 15%,
-      var(--color-teak) 35%,
+      var(--color-teak-light) 20%,
+      var(--color-teak) 40%,
       var(--color-teak-dark) 50%,
-      var(--color-teak) 65%,
-      var(--color-teak-light) 85%,
+      var(--color-teak) 60%,
+      var(--color-teak-light) 80%,
       transparent 100%
     );
-    opacity: 0.35;
+    opacity: 0.25;
   }
 
-  .teak-divider::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 8px,
-        rgba(255, 255, 255, 0.3) 8px,
-        rgba(255, 255, 255, 0.3) 9px
-      );
-  }
-
-  /* Teak card hover — warm wood glow on hover */
+  /* Teak card hover */
   .teak-card {
     transition: box-shadow 0.5s cubic-bezier(0.25, 0.4, 0.25, 1),
                 border-color 0.5s cubic-bezier(0.25, 0.4, 0.25, 1);
@@ -171,42 +147,24 @@
   .teak-card:hover {
     box-shadow:
       0 4px 20px rgba(107, 66, 38, 0.08),
-      0 1px 4px rgba(160, 113, 79, 0.06),
-      inset 0 1px 0 rgba(196, 149, 106, 0.15);
+      0 1px 4px rgba(160, 113, 79, 0.06);
   }
 
-  /* Gold shimmer for logo and accents */
-  .gold-shimmer {
+  /* Forest accent line — brand-colored rule */
+  .forest-rule {
+    height: 1px;
     background: linear-gradient(
-      135deg,
-      #B8923D 0%,
-      #C9A84C 25%,
-      #E8C96A 50%,
-      #C9A84C 75%,
-      #B8923D 100%
+      90deg,
+      transparent 0%,
+      var(--color-forest) 30%,
+      var(--color-forest) 70%,
+      transparent 100%
     );
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  /* Teak-warm section background */
-  .bg-teak-warm {
-    background: linear-gradient(
-      180deg,
-      var(--color-parchment) 0%,
-      #EDE5D8 50%,
-      var(--color-parchment) 100%
-    );
+    opacity: 0.2;
   }
 }
 
 @layer utilities {
-  .font-serif {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-  }
-
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -227,7 +185,7 @@
     inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
     pointer-events: none;
-    opacity: 0.4;
+    opacity: 0.35;
     mix-blend-mode: multiply;
   }
 
@@ -239,16 +197,15 @@
     height: 1px;
     background: currentColor;
     margin-bottom: 1rem;
-    opacity: 0.4;
+    opacity: 0.3;
   }
 }
 
-/* Fine-tuned prose for editorial text */
+/* Editorial prose */
 .prose-editorial {
-  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.125rem;
-  line-height: 1.75;
-  color: #2C2C2C;
+  line-height: 1.8;
+  color: #2C2825;
 }
 
 .prose-editorial em {

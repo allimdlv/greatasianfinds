@@ -28,7 +28,6 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
   const sort = (searchParams.sort as string) || 'featured'
   const priceMax = searchParams.price_max ? Number(searchParams.price_max) : undefined
 
-  // Filter
   let filtered = [...PRODUCTS]
 
   if (countries?.length) {
@@ -44,7 +43,6 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
     filtered = filtered.filter((p) => p.price <= priceMax)
   }
 
-  // Sort
   switch (sort) {
     case 'price-asc':
       filtered.sort((a, b) => a.price - b.price)
@@ -69,14 +67,14 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
   return (
     <div className="min-h-screen bg-parchment">
       {/* Page header */}
-      <div className="bg-cream border-b border-charcoal/8 py-12 lg:py-16 px-6 lg:px-10">
+      <div className="bg-cream border-b border-forest/6 py-12 lg:py-16 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-warm-wood font-sans mb-2">
+          <p className="text-[10px] tracking-[0.3em] uppercase text-forest font-sans mb-2">
             The Collection
           </p>
-          <h1 className="font-serif text-4xl lg:text-6xl text-charcoal">Shop All Pieces</h1>
-          <p className="text-charcoal/50 font-sans mt-3 text-sm">
-            {filtered.length} {filtered.length === 1 ? 'piece' : 'pieces'} ·{' '}
+          <h1 className="font-display text-4xl lg:text-6xl text-charcoal">Shop All Pieces</h1>
+          <p className="text-warm-gray font-sans mt-3 text-sm">
+            {filtered.length} {filtered.length === 1 ? 'piece' : 'pieces'} &middot;{' '}
             {hasActiveFilters ? 'Filtered results' : 'Sourced from across Asia'}
           </p>
         </div>
@@ -86,7 +84,7 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
         <div className="flex gap-14">
           {/* Filter sidebar */}
           <aside className="hidden lg:block w-52 flex-shrink-0 pt-1">
-            <Suspense fallback={<div className="animate-pulse h-96 bg-cream" />}>
+            <Suspense fallback={<div className="animate-pulse h-96 bg-clay" />}>
               <ShopFilters activeFilters={activeFilters} />
             </Suspense>
           </aside>
@@ -94,11 +92,11 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
           {/* Product grid */}
           <div className="flex-1 min-w-0">
             {/* Mobile filter bar */}
-            <div className="lg:hidden flex items-center justify-between mb-6 pb-5 border-b border-charcoal/10">
-              <span className="text-sm text-charcoal/60 font-sans">
+            <div className="lg:hidden flex items-center justify-between mb-6 pb-5 border-b border-forest/8">
+              <span className="text-sm text-warm-gray font-sans">
                 {filtered.length} pieces
               </span>
-              <button className="flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase font-sans text-charcoal">
+              <button className="flex items-center gap-2 text-[11px] tracking-[0.18em] uppercase font-sans text-charcoal">
                 <SlidersHorizontal size={14} strokeWidth={1.5} />
                 Filter & Sort
               </button>
@@ -106,8 +104,8 @@ export default function ShopPage({ searchParams }: ShopPageProps) {
 
             {filtered.length === 0 ? (
               <div className="text-center py-24">
-                <p className="font-serif text-2xl text-charcoal/35">No pieces found</p>
-                <p className="text-sm text-charcoal/25 font-sans mt-2">
+                <p className="font-display text-2xl text-charcoal/30">No pieces found</p>
+                <p className="text-sm text-warm-gray/50 font-sans mt-2">
                   Try adjusting your filters
                 </p>
               </div>
