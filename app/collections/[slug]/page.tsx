@@ -37,13 +37,13 @@ export default function CollectionPage({ params }: CollectionPageProps) {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${collection.hero_image})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/75 via-charcoal/30 to-charcoal/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-forest-dark/75 via-charcoal/25 to-charcoal/10" />
 
         {/* Back nav */}
         <div className="relative pt-6 px-6 lg:px-10">
           <Link
             href="/collections"
-            className="inline-flex items-center gap-2 text-cream/60 text-[11px] tracking-[0.2em] uppercase font-sans hover:text-cream transition-colors"
+            className="inline-flex items-center gap-2 text-parchment/55 text-[11px] tracking-[0.18em] uppercase font-sans hover:text-parchment transition-colors"
           >
             <ArrowLeft size={13} strokeWidth={1.5} />
             All Collections
@@ -52,20 +52,20 @@ export default function CollectionPage({ params }: CollectionPageProps) {
 
         {/* Content */}
         <div className="absolute bottom-0 left-0 right-0 px-6 lg:px-10 pb-10 lg:pb-14 max-w-7xl mx-auto">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-cream/50 font-sans mb-3">
+          <p className="text-[10px] tracking-[0.3em] uppercase text-celadon/70 font-sans mb-3">
             Collection
           </p>
-          <h1 className="font-serif text-4xl lg:text-6xl text-cream mb-3 leading-tight">
+          <h1 className="font-display text-4xl lg:text-6xl text-parchment mb-3 leading-tight">
             {collection.name}
           </h1>
-          <p className="font-serif text-xl text-cream/60 italic">{collection.tagline}</p>
+          <p className="font-serif text-xl text-parchment/55 italic">{collection.tagline}</p>
         </div>
       </div>
 
       {/* Story */}
       <div className="bg-cream py-16 lg:py-20">
         <div className="max-w-2xl mx-auto px-6 lg:px-10 text-center">
-          <p className="font-serif text-xl lg:text-2xl text-charcoal/70 leading-relaxed italic">
+          <p className="font-serif text-xl lg:text-2xl text-warm-gray leading-relaxed italic">
             &ldquo;{collection.story}&rdquo;
           </p>
         </div>
@@ -73,14 +73,13 @@ export default function CollectionPage({ params }: CollectionPageProps) {
 
       {/* Products */}
       <div className="max-w-7xl mx-auto px-6 lg:px-10 pb-20 lg:pb-28">
-        {/* Count bar */}
-        <div className="flex items-center justify-between py-8 border-b border-charcoal/10 mb-10">
-          <h2 className="font-serif text-xl lg:text-2xl text-charcoal">
+        <div className="flex items-center justify-between py-8 border-b border-forest/8 mb-10">
+          <h2 className="font-display text-xl lg:text-2xl text-charcoal">
             {products.length} {products.length === 1 ? 'Piece' : 'Pieces'} in This Collection
           </h2>
           <Link
             href="/shop"
-            className="text-[11px] tracking-[0.2em] uppercase text-charcoal/45 hover:text-warm-wood transition-colors font-sans"
+            className="text-[11px] tracking-[0.18em] uppercase text-charcoal/40 hover:text-forest transition-colors font-sans"
           >
             Shop All
           </Link>
@@ -88,7 +87,7 @@ export default function CollectionPage({ params }: CollectionPageProps) {
 
         {products.length === 0 ? (
           <div className="text-center py-20">
-            <p className="font-serif text-2xl text-charcoal/30">
+            <p className="font-display text-2xl text-charcoal/25">
               No pieces currently in this collection
             </p>
           </div>

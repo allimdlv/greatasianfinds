@@ -12,13 +12,13 @@ export default function CollectionsPage() {
   return (
     <div className="min-h-screen bg-parchment">
       {/* Header */}
-      <div className="bg-cream border-b border-charcoal/8 py-12 lg:py-16 px-6 lg:px-10">
+      <div className="bg-cream border-b border-forest/6 py-12 lg:py-16 px-6 lg:px-10">
         <div className="max-w-7xl mx-auto">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-warm-wood font-sans mb-2">
+          <p className="text-[10px] tracking-[0.3em] uppercase text-forest font-sans mb-2">
             Curated Narratives
           </p>
-          <h1 className="font-serif text-4xl lg:text-6xl text-charcoal">Collections</h1>
-          <p className="text-charcoal/50 font-sans mt-3 text-sm max-w-lg leading-relaxed">
+          <h1 className="font-display text-4xl lg:text-6xl text-charcoal">Collections</h1>
+          <p className="text-warm-gray font-sans mt-3 text-sm max-w-lg leading-relaxed">
             Each collection is a story — of material, of origin, of a particular way of seeing
             the home.
           </p>
@@ -29,7 +29,7 @@ export default function CollectionsPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14 lg:py-20">
         <div className="space-y-14 lg:space-y-20">
           {COLLECTIONS.map((collection, i) => {
-            const isWide = i % 3 === 0 // Every 3rd item is featured wide
+            const isWide = i % 3 === 0
             return (
               <Link
                 key={collection.slug}
@@ -51,10 +51,9 @@ export default function CollectionsPage() {
                       className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                       style={{ backgroundImage: `url(${collection.hero_image})` }}
                     />
-                    <div className="absolute inset-0 bg-charcoal/25 group-hover:bg-charcoal/15 transition-colors duration-500" />
-                    {/* Piece count */}
+                    <div className="absolute inset-0 bg-forest-dark/20 group-hover:bg-forest-dark/10 transition-colors duration-500" />
                     <div className="absolute bottom-5 left-5">
-                      <span className="bg-cream/90 text-charcoal text-[10px] tracking-[0.2em] uppercase font-sans px-3 py-1.5">
+                      <span className="bg-parchment/90 text-forest text-[10px] tracking-[0.18em] uppercase font-sans px-3 py-1.5">
                         {collection.product_ids.length} pieces
                       </span>
                     </div>
@@ -62,21 +61,21 @@ export default function CollectionsPage() {
 
                   {/* Text */}
                   <div className={isWide ? 'max-w-2xl' : ''}>
-                    <p className="text-[10px] tracking-[0.3em] uppercase text-warm-wood font-sans mb-3">
+                    <p className="text-[10px] tracking-[0.3em] uppercase text-forest font-sans mb-3">
                       Collection
                     </p>
-                    <h2 className="font-serif text-2xl lg:text-4xl text-charcoal group-hover:text-warm-wood transition-colors duration-300 mb-2 leading-tight">
+                    <h2 className="font-display text-2xl lg:text-4xl text-charcoal group-hover:text-forest transition-colors duration-300 mb-2 leading-tight">
                       {collection.name}
                     </h2>
-                    <p className="font-serif text-lg text-charcoal/45 italic mb-5 leading-snug">
+                    <p className="font-serif text-lg text-warm-gray italic mb-5 leading-snug">
                       {collection.tagline}
                     </p>
-                    <p className="text-sm text-charcoal/55 font-sans leading-relaxed max-w-md">
+                    <p className="text-sm text-warm-gray/80 font-sans leading-relaxed max-w-md">
                       {collection.description}
                     </p>
-                    <div className="mt-6 group/link flex items-center gap-3">
-                      <span className="w-6 h-px bg-charcoal group-hover:bg-warm-wood transition-colors duration-300 group-hover/link:w-10 transition-all" />
-                      <span className="text-[11px] tracking-[0.2em] uppercase font-sans text-charcoal/60 group-hover:text-warm-wood transition-colors duration-300">
+                    <div className="mt-6 flex items-center gap-3">
+                      <span className="w-6 h-px bg-forest/40 group-hover:w-10 transition-all duration-300" />
+                      <span className="text-[11px] tracking-[0.18em] uppercase font-sans text-charcoal/50 group-hover:text-forest transition-colors duration-300">
                         Explore collection
                       </span>
                     </div>
