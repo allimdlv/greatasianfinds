@@ -40,7 +40,13 @@
       "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git status 2>&1\")",
       "Bash(wsl -e bash -c \"ls -la /home/allimdv/greatasianfinds/public/brand/ 2>&1\")",
       "Bash(wsl -e bash -c \"mv /home/allimdv/greatasianfinds/public/brand/gaf-logo.png.png /home/allimdv/greatasianfinds/public/brand/gaf-logo.png && ls -la /home/allimdv/greatasianfinds/public/brand/\")",
-      "Bash(find /mnt/c/Users/*/AppData/Local -name \"greatasianfinds\" -type d)"
+      "Bash(find /mnt/c/Users/*/AppData/Local -name \"greatasianfinds\" -type d)",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && npx next build 2>&1 | tail -30\")",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git status\")",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git status -u\")",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git diff --stat\")",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git log --oneline -3\")",
+      "Bash(wsl -e bash -c \"cd /home/allimdv/greatasianfinds && git add app/collections/page.tsx app/collections/\\\\[slug\\\\]/page.tsx && git commit -m ''Update collections pages with new forest green design system and font-display headings:*)"
     ]
   }
 }
